@@ -1,4 +1,4 @@
-// Deku is a great hero
+// Deku is a great hero, forreal tho
 
 event_user(state_);
 sprite_index = sprite_[state_, direction_facing_];
