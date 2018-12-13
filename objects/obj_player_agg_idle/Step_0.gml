@@ -1,3 +1,5 @@
+// Deku is a great hero
+
 event_user(state_);
 sprite_index = sprite_[state_, direction_facing_];
 length = string_length(keys);
