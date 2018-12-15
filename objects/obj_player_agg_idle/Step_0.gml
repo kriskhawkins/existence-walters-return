@@ -36,6 +36,6 @@ if lastFour = redStrike
 	keys = "";
 	timeTotal = 0;
 	effect_create_below(ef_explosion, x, y, 1, c_red);
-	build_hitbox(spr_explode_hitbox,x,y, 0, 4, [], 2, 0);
+	build_hitbox(spr_explode_hitbox,x,y-16, 0, 4, [], 2, 0);
 }
 
