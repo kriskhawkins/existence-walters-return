@@ -19,6 +19,11 @@ walkYSpeed = 3;
 grounded_ = true;
 ground_y_ = y;
 
+// Player combat variables
+// @KH - Adding to finish melee mook implementation, will need to refactor
+max_hp_ = 50;
+current_hp_ = max_hp_;
+
 //Room Control
 yMinDist = 180;
 yMaxDist = 270;
