@@ -16,6 +16,8 @@ roll_direction_ = dir.right;
 jumpHeight = 10;
 walkXSpeed = 6;
 walkYSpeed = 3;
+grounded_ = true;
+ground_y_ = y;
 
 //Room Control
 yMinDist = 180;
