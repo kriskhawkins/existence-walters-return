@@ -2,7 +2,7 @@
     "id": "a5a223b3-1fef-4e54-9dd8-eda51001cfd3",
     "modelName": "GMObject",
     "mvc": "1.0",
-    "name": "obj_ATK_basic_attack",
+    "name": "obj_ATK_basic_punch",
     "eventList": [
         {
             "id": "755748ed-9a12-4ee5-9cba-5ffe1531ea6b",
@@ -33,6 +33,6 @@
     "physicsStartAwake": true,
     "properties": null,
     "solid": false,
-    "spriteId": "8edde779-a6da-487b-8978-ea8896118bee",
-    "visible": true
+    "spriteId": "8248f8b7-5771-4e95-8bcb-a452fff5b221",
+    "visible": false
 }

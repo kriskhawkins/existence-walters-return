@@ -5,7 +5,7 @@
 // 3) Target is within range
 if( attacker_ == "Player"
 	&& image_index == active_frames_ && abs(depth - other.depth) <= ATTACK_RANGE 
-	&& abs(y - other.y) <= LAYER_SIZE) 
+	&& abs(y - other.y) <= ATTACK_RANGE) 
 {
 	// Assign damage
     other.current_hp_ -= damage_;
@@ -15,4 +15,8 @@ if( attacker_ == "Player"
 	
 	// Trigger hit stun timer
     other.alarm[0] = hit_stun_length_;
+	
+	// Play sound effect
+	audio_play_sound(hit_sound_,10,false);
+	hit_ = true;
 }

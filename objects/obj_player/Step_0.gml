@@ -1,4 +1,6 @@
 //  Check if player is still alive, if not DESTROY them
+
+#region Movement 
 if(current_hp_ > 0) {
 	// Checks if either the A or D buttons are pressed to make the player move Left or Right.
 	x_speed_ = 0;
@@ -56,6 +58,19 @@ if(current_hp_ > 0) {
 else {
     instance_destroy();
 }
+#endregion
+
+#region Attack Logic
+if(keyboard_check_pressed(ord("J")) && grounded_ == true) {
+	attack_type_ = "Basic Punch";
+	event_user(2);
+}
+
+else if(keyboard_check_pressed(ord("K")) && grounded_ == true) {
+	attack_type_ = "Strong Punch";
+	event_user(2);
+}
+#endregion
 
 //If the player is on the ground, this sets their GroundY variable to their current y position
 if(grounded_ == true){

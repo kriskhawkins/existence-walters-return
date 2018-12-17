@@ -15,4 +15,8 @@ if( attacker_ == "Enemy"
 	
 	// Trigger hit stun timer
     other.alarm[3] = hit_stun_length_;
+	
+	// Play sound effect
+	audio_play_sound(hit_sound_,10,false);
+	hit_ = true;
 }
