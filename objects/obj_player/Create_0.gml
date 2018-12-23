@@ -16,5 +16,8 @@ is_hit_ = false;
 // Positioning variables
 grounded_ = true;
 ground_y_ = y;
- 
+
 image_speed = .75;
+
+//// Create camera
+//my_camera_ = instance_create_layer(x, y, "Instances", obj_camera);
