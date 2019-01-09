@@ -1,3 +1,6 @@
+// Create jump variable
+jump = keyboard_check_pressed(vk_space);
+
 // Store nearest battle region for easy reference in code
 var _my_battle_region = instance_nearest(x,y,obj_battle_region);
 
@@ -104,3 +107,30 @@ if(grounded_ == true){
 //Sets the Players' depth based on their GroundY. We're using GroundY instead of y so that even when they're in the air, they will display in fornt of and behind the right objects.
 depth = -1 * ground_y_;
 
+switch (state)
+{
+	case "idle": 
+		if (jump) {
+			z_air_speed = 4;
+			state = "jump";
+		}
+		
+		break;
+	case "jump": 
+		// When jumping, player moves up by z_air_speed value
+		z -= z_air_speed;
+		
+		// So long as player z is negative (above the floor), decrement z_air_speed by grav until player is pulled down to zfloor
+		if (z < z_floor) {
+			z_air_speed -= grav;
+		}
+		
+		// Once z is greater than or equal to floor, reset z values and idle state
+		if (z >= z_floor) {
+			z = 0;
+			z_air_speed = 0;
+			state = "idle";
+		}
+		
+		break;
+}

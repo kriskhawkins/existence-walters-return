@@ -1,10 +1,19 @@
 /// Create Player
 
+// State 
+state  = "idle";
+
 // Movement variables
 speed_ = 2;
 speed_mod_ = 1;
 x_speed_ = 0;
 y_speed_ = 0;
+
+// Jump variables
+z = 0;
+z_air_speed = 0;
+z_floor = 0;
+grav = .2;
 
 // Combat variables
 is_attacking_ = false;
