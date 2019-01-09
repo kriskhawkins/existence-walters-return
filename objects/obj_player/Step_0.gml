@@ -1,6 +1,8 @@
-//  Check if player is still alive, if not DESTROY them
+// Store nearest battle region for easy reference in code
+var _my_battle_region = instance_nearest(x,y,obj_battle_region);
 
 #region Movement 
+//  Check if player is still alive, if not DESTROY them
 if(current_hp_ > 0) {
 	// Checks if either the A or D buttons are pressed to make the player move Left or Right.
 	x_speed_ = 0;
@@ -21,6 +23,28 @@ if(current_hp_ > 0) {
 	        y_speed_ = speed_;
 	    }
 	}
+	
+	if(_my_battle_region.is_active_ == true){
+	    // Check if the player is going to exit the region OR if they're going to collide with a solid object,
+		// if so, set their speed to 0
+		if(point_in_rectangle(
+			x+x_speed_*speed_mod_, y, _my_battle_region.left_edge_+35, 
+			_my_battle_region.top_edge_, _my_battle_region.right_edge_-35, 
+			_my_battle_region.bottom_edge_)==false 
+			||  place_free(x+x_speed_*speed_mod_, y)==false)
+		{
+	        x_speed_ = 0;
+	    }  
+     
+	    if(point_in_rectangle(
+			x, y+y_speed_*speed_mod_, 
+			_my_battle_region.left_edge_+35, _my_battle_region.right_edge_, 
+			_my_battle_region.right_edge_-35, _my_battle_region.bottom_edge_)==false 
+			|| place_free(x, y+y_speed_*speed_mod_)==false)
+		{
+	        y_speed_ = 0;
+	    }
+}
 	
 	if(is_attacking_ == false && is_hit_ = false) {
          
