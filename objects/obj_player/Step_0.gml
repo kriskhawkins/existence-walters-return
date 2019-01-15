@@ -107,6 +107,7 @@ if(grounded_ == true){
 //Sets the Players' depth based on their GroundY. We're using GroundY instead of y so that even when they're in the air, they will display in fornt of and behind the right objects.
 depth = -1 * ground_y_;
 
+#region Jump Logic
 switch (state)
 {
 	case "idle": 
@@ -134,3 +135,50 @@ switch (state)
 		
 		break;
 }
+#endregion
+
+#region Command Skills
+var length = string_length(keys)
+			
+if length > 0
+{
+	timeTotal += timeStep;
+}
+			
+if timeTotal >= timeRemove or string_length(keys) > 6
+{
+	timeTotal = 0;
+	keys = string_copy(keys, 2, length-1);
+}
+			
+length = string_length(keys);
+var lastFour;
+var lastThree;
+var redStrike = "ADDD";
+var blueShutdown = "AAA";
+lastFour = string_copy(keys, length-4+1, 4);
+lastThree = string_copy(keys, length-3+1, 3);
+			
+if lastFour = redStrike
+{
+	keys = ""; 
+	timeTotal = 0;
+	effect_create_below(ef_explosion,x,y,1,c_red);
+}
+			
+if lastThree = blueShutdown
+{
+	keys = "";
+	timeTotal = 0;
+	effect_create_below(ef_ring,x,y,1,c_aqua);
+}
+			
+if keyboard_check_pressed(ord("A"))
+{
+	keys += "A";
+}
+if keyboard_check_pressed(ord("D"))
+{
+	keys += "D";
+}
+#endregion

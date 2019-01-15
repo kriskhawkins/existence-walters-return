@@ -1,5 +1,11 @@
 /// Create Player
 
+// Command Skill Timer
+keys="";
+timeRemove = .9;
+timeStep= 1/30;
+timeTotal = 0;
+
 // State 
 state  = "idle";
 
